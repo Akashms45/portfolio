@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.heading {
+  @apply font-heading text-4xl font-bold tracking-wide;
+}
+
+.body-text {
+  @apply font-body text-gray-800 dark:text-gray-300 text-base leading-relaxed;
+}
+
+.accent {
+  @apply text-primary hover:text-primaryDark transition;
+}
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 px-6 py-3 
+         bg-primary hover:bg-primary/80 text-white rounded-lg 
+         shadow-md transition dark:bg-primaryDark dark:hover:bg-primaryDark/80;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.lobster {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.amarna {
+  font-family: "Amarna", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100%;
+  font-style: normal;
+}
