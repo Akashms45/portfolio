@@ -23,12 +23,22 @@ Designed with a clean UI, smooth interactions, dark/light mode, and a mobile-fir
 ```bash
 git clone https://github.com/your-username/your-portfolio-repo.git
 cd your-portfolio-repo
-2️⃣ Install dependencies
-bash
+```
+
+---
+
+### 2️⃣ Install dependencies
+
+```bash
 Copy code
 npm install
-3️⃣ Run the project locally
-bash
+```
+
+---
+
+### 3️⃣ Run the project locally
+
+```bash
 Copy code
 npm run dev
 or (if using CRA):
@@ -42,8 +52,11 @@ arduino
 Copy code
 http://localhost:5173
 (or http://localhost:3000)
+```
 
-🗂️ Project Structure (Important)
+### 🗂️ Project Structure (Important)
+
+```bash
 text
 Copy code
 src/
@@ -137,7 +150,13 @@ Copy code
 <a href="/YourName_CV.pdf" download>
   Download CV
 </a>
-🎨 Create a Custom Avatar (Optional)
+```
+
+---
+
+### 🎨 Create a Custom Avatar (Optional)
+
+```bash
 You can generate a professional avatar using AI tools such as ChatGPT, DALL·E, or Midjourney.
 
 🪄 Recommended Prompt
@@ -159,7 +178,13 @@ Place it in src/assets/
 
 Update the image reference in info.js
 
-📱 Responsive Behavior
+```
+
+---
+
+### 📱 Responsive Behavior
+
+```bash
 Desktop / Tablet
 
 Uses page routing
@@ -179,15 +204,25 @@ Logo + dark/light toggle only
 Projects displayed as scrollable cards
 
 This behavior is handled automatically using screen-size detection.
+```
 
-🌗 Dark / Light Mode
+---
+
+### 🌗 Dark / Light Mode
+
+```bash
 Toggle available in the navbar
 
 Uses Tailwind dark mode
 
 Easily extendable with localStorage persistence
+```
 
-📬 Contact Form (EmailJS)
+---
+
+### 📬 Contact Form (EmailJS)
+
+```bash
 The contact form uses EmailJS — no backend required.
 
 Setup Steps:
@@ -210,8 +245,13 @@ Public Key
 Paste them into Contact.jsx
 
 Messages will be sent directly to your email.
+```
 
-✅ Final Notes
+---
+
+### ✅ Final Notes
+
+```bash
 Fully data-driven architecture
 
 Easy to customize and extend
