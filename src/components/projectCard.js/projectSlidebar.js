@@ -70,6 +70,7 @@ export const ProjectSlider = () => {
                 <a
                   href={project.githubLink}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-primary dark:hover:text-primaryDark transition"
                 >
                   <FiGithub />
@@ -80,6 +81,7 @@ export const ProjectSlider = () => {
                 <a
                   href={project.liveLink}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-primary dark:hover:text-primaryDark transition"
                 >
                   <FiExternalLink />

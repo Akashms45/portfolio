@@ -1,4 +1,4 @@
-import { FiMail, FiPhone, FiLinkedin, FiMapPin } from "react-icons/fi";
+import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import { info } from "../../data/info";
 import emailjs from "emailjs-com";
 import { useState } from "react";

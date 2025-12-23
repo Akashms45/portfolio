@@ -2,11 +2,8 @@ import React from "react";
 import { info } from "../../data/info";
 import { FiDownload, FiInstagram } from "react-icons/fi";
 import { GiReturnArrow } from "react-icons/gi";
-import { useMobile } from "../../hooks/useMobile";
 
 export const About = () => {
-  const isMobile = useMobile(); // detect small screens
-
   return (
     <div
       className="
@@ -18,12 +15,12 @@ export const About = () => {
         px-4 py-10
       "
     >
-      {isMobile && (
-        <div className="relative">
-          <img
-            src={info.aboutpic}
-            alt="profile"
-            className="
+      {/* IMAGE */}
+      <div className="relative">
+        <img
+          src={info.aboutpic}
+          alt="profile"
+          className="
     block dark:hidden 
     object-cover 
     w-80 h-60 mx-auto      /* only change */
@@ -31,12 +28,12 @@ export const About = () => {
     rounded-2xl 
     transition-opacity duration-500
   "
-          />
+        />
 
-          <img
-            src={info.aboutpicdark}
-            alt="profile dark"
-            className="
+        <img
+          src={info.aboutpicdark}
+          alt="profile dark"
+          className="
     hidden dark:block 
     object-cover 
     w-80 h-60 mx-auto      /* same change */
@@ -44,9 +41,8 @@ export const About = () => {
     rounded-2xl 
     transition-opacity duration-500
   "
-          />
-        </div>
-      )}
+        />
+      </div>
 
       {/* TEXT SECTION */}
       <div className="ml-auto text-center md:text-left space-y-8">
