@@ -38,7 +38,7 @@ export const Sections = () => {
 
       {/* toggle button */}
       <button
-        className="p-2 text-lg rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+        className="p-2 text-lg rounded-md font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition"
         onClick={toggleTheme}
       >
         {dark ? <FiSun /> : <FiMoon />}

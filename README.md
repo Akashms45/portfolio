@@ -1,70 +1,222 @@
-# Getting Started with Create React App
+# 🚀 Personal Portfolio – React + Tailwind
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive personal portfolio built with **React**, **Tailwind CSS**, and **React Router**.  
+Designed with a clean UI, smooth interactions, dark/light mode, and a mobile-first scrolling experience.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📦 Tech Stack
 
-### `npm start`
+- React
+- Tailwind CSS
+- React Router
+- React Icons
+- EmailJS (Contact Form)
+- Vite / Create React App
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙️ Installation & Setup
 
-### `npm test`
+### 1️⃣ Clone the repository
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone https://github.com/your-username/your-portfolio-repo.git
+cd your-portfolio-repo
+2️⃣ Install dependencies
+bash
+Copy code
+npm install
+3️⃣ Run the project locally
+bash
+Copy code
+npm run dev
+or (if using CRA):
 
-### `npm run build`
+bash
+Copy code
+npm start
+The app will be available at:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+arduino
+Copy code
+http://localhost:5173
+(or http://localhost:3000)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+🗂️ Project Structure (Important)
+text
+Copy code
+src/
+├── components/
+├── pages/
+├── data/
+│   ├── info.js        # Update personal details here
+│   ├── projects.js    # Update project details here
+├── assets/            # Images (profile, projects, etc.)
+├── hooks/
+└── layouts/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+public/
+├── AkashCV.pdf        # Replace with your resume
+✏️ How to Customize This Portfolio
+🔹 1. Update Personal Information
+Go to:
 
-### `npm run eject`
+text
+Copy code
+src/data/info.js
+You can update:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Name & role
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+About summary
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Social links (GitHub, LinkedIn, Instagram)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Contact details
 
-## Learn More
+Skills & percentages
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+All UI updates automatically.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+🔹 2. Update Projects
+Go to:
 
-### Code Splitting
+text
+Copy code
+src/data/projects.js
+Add or edit projects like this:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+js
+Copy code
+{
+  id: 1,
+  title: "Movie Explorer",
+  description: "Movie search and details app using API integration.",
+  tech: ["React", "TMDB API", "Tailwind"],
+  image: movieImg,
+  githubLink: "https://github.com/username/repo",
+  liveLink: "https://your-live-site.com",
+}
+Projects automatically update in:
 
-### Analyzing the Bundle Size
+Desktop project slider
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Mobile scroll layout
 
-### Making a Progressive Web App
+Dot indicators
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🔹 3. Update Images
+Add your images to:
 
-### Advanced Configuration
+text
+Copy code
+src/assets/
+Then import them inside info.js or projects.js.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Example:
 
-### Deployment
+js
+Copy code
+import profile from "../assets/profile.png";
+🔹 4. Add / Replace Resume
+Place your resume file inside:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+text
+Copy code
+public/
+Example:
 
-### `npm run build` fails to minify
+text
+Copy code
+public/YourName_CV.pdf
+Update the download link if needed:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+jsx
+Copy code
+<a href="/YourName_CV.pdf" download>
+  Download CV
+</a>
+🎨 Create a Custom Avatar (Optional)
+You can generate a professional avatar using AI tools such as ChatGPT, DALL·E, or Midjourney.
+
+🪄 Recommended Prompt
+Use the prompt below when generating your avatar:
+
+css
+Copy code
+Create a semi-realistic cartoon avatar from the uploaded photo.
+Preserve facial features, skin tone, hairstyle, glasses, and expression.
+Smooth digital illustration with clean lines and soft shading.
+Front-facing, head and upper torso visible, centered composition.
+Violet / purple gradient background.
+High-quality, modern profile-style avatar.
+After generating:
+
+Download the image
+
+Place it in src/assets/
+
+Update the image reference in info.js
+
+📱 Responsive Behavior
+Desktop / Tablet
+
+Uses page routing
+
+Project slider layout
+
+Full navigation menu
+
+Mobile
+
+Single scrollable page (Home → About → Skills → Projects → Contact)
+
+No section links
+
+Logo + dark/light toggle only
+
+Projects displayed as scrollable cards
+
+This behavior is handled automatically using screen-size detection.
+
+🌗 Dark / Light Mode
+Toggle available in the navbar
+
+Uses Tailwind dark mode
+
+Easily extendable with localStorage persistence
+
+📬 Contact Form (EmailJS)
+The contact form uses EmailJS — no backend required.
+
+Setup Steps:
+Go to https://dashboard.emailjs.com
+
+Create:
+
+Email Service
+
+Email Template
+
+Copy:
+
+Service ID
+
+Template ID
+
+Public Key
+
+Paste them into Contact.jsx
+
+Messages will be sent directly to your email.
+
+✅ Final Notes
+Fully data-driven architecture
+
+Easy to customize and extend
+
+Optimized for recruiters & personal branding
+
+Works seamlessly across devices
+```

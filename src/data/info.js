@@ -22,9 +22,6 @@ export const info = {
   aboutme:
     "I recently completed my MCA and I’m working toward a career in frontend development. I love building intuitive interfaces with React and learning better ways to structure components, manage state, and connect APIs. I’m actively seeking opportunities to apply my skills and grow through real-world experience.",
 
-  // ==========================
-  //         SKILLS
-  // ==========================
   skills: {
     frontend: [
       { name: "React", level: 85, icon: "react" },
@@ -51,5 +48,10 @@ export const info = {
       { name: "VS Code", icon: "vscode" },
       { name: "Prompting / OpenAI basics", icon: "prompt" },
     ],
+  },
+  contact: {
+    email: "akashms452002@gmail.com",
+    phone: "+91 8722553716",
+    address: "Bangalore, India",
   },
 };

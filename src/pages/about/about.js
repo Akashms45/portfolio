@@ -2,8 +2,11 @@ import React from "react";
 import { info } from "../../data/info";
 import { FiDownload, FiInstagram } from "react-icons/fi";
 import { GiReturnArrow } from "react-icons/gi";
+import { useMobile } from "../../hooks/useMobile";
 
 export const About = () => {
+  const isMobile = useMobile(); // detect small screens
+
   return (
     <div
       className="
@@ -15,27 +18,35 @@ export const About = () => {
         px-4 py-10
       "
     >
-      {/* IMAGE */}
-      <div className="relative">
-        <img
-          src={info.aboutpic}
-          alt="profile"
-          className="
-            block dark:hidden 
-            object-cover w-full h-full rounded-2xl 
-            transition-opacity duration-500
-          "
-        />
-        <img
-          src={info.aboutpicdark}
-          alt="profile dark"
-          className="
-            hidden dark:block 
-            object-cover w-full h-full rounded-2xl 
-            transition-opacity duration-500
-          "
-        />
-      </div>
+      {isMobile && (
+        <div className="relative">
+          <img
+            src={info.aboutpic}
+            alt="profile"
+            className="
+    block dark:hidden 
+    object-cover 
+    w-80 h-60 mx-auto      /* only change */
+    md:w-full md:h-full 
+    rounded-2xl 
+    transition-opacity duration-500
+  "
+          />
+
+          <img
+            src={info.aboutpicdark}
+            alt="profile dark"
+            className="
+    hidden dark:block 
+    object-cover 
+    w-80 h-60 mx-auto      /* same change */
+    md:w-full md:h-full 
+    rounded-2xl 
+    transition-opacity duration-500
+  "
+          />
+        </div>
+      )}
 
       {/* TEXT SECTION */}
       <div className="ml-auto text-center md:text-left space-y-8">
@@ -64,7 +75,7 @@ export const About = () => {
           <span
             className="
       font-hand text-xs text-gray-800 dark:text-gray-300
-      absolute -top-0 left-3
+      absolute -top-3 md:-top-0 left-3
       mt-3
       rotate-[-18deg]          /* slight handwritten angle */
       
