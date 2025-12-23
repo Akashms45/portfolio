@@ -12,7 +12,7 @@ export const projects = [
     tech: ["React", "Tailwind"],
     image: Portfolio,
     githubLink: "https://github.com/Akashms45/portfolio",
-    liveLink: "",
+    liveLink: "https://akashms.netlify.app/",
   },
   {
     id: 2,
