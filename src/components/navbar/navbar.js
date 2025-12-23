@@ -33,12 +33,14 @@ export const Navbar = () => {
         <div className="flex items-center gap-8">
           {!isMobile && <Sections />}
 
-          <button
-            onClick={toggleTheme}
-            className="text-3xl hover:scale-110 transition"
-          >
-            {dark ? <FiSun /> : <FiMoon />}
-          </button>
+          {isMobile && (
+            <button
+              onClick={toggleTheme}
+              className="text-3xl hover:scale-110 transition"
+            >
+              {dark ? <FiSun /> : <FiMoon />}
+            </button>
+          )}
         </div>
       </div>
     </nav>
