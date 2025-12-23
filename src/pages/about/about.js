@@ -11,7 +11,7 @@ export const About = () => {
         grid-cols-1 md:grid-cols-2
         items-center justify-center
         max-w-6xl mx-auto
-        min-h-[calc(100vh-200px)]
+        min-h-[calc(100vh-220px)]
         px-4 py-10
       "
     >

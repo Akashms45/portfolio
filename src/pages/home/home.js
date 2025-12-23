@@ -19,7 +19,7 @@ export const Home = () => {
           items-center
           justify-center
           max-w-6xl mx-auto          
-          min-h-[calc(100vh-220px)]           
+          min-h-[calc(100vh-230px)]           
           px-4
         "
       >
