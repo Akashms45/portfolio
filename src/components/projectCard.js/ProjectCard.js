@@ -11,37 +11,44 @@ export const ProjectCard = ({
   return (
     <div
       className="
-        relative rounded-2xl overflow-hidden shadow-lg
-        group cursor-pointer transition-transform duration-300
-        hover:scale-[1.02]
+        relative w-full
+        rounded-2xl overflow-hidden
+        shadow-lg
+        mb-8
       "
     >
-      {/* BACKGROUND IMAGE */}
-      <img src={image} alt={title} className="w-full h-64 object-cover" />
-
-      {/* DARK OVERLAY */}
-      <div
+      {/* IMAGE */}
+      <img
+        src={image}
+        alt={title}
         className="
-          absolute inset-0 bg-black/70 
-          opacity-100 group-hover:bg-black/80 
-          transition duration-300
+          w-full h-56
+          object-cover
         "
       />
 
-      {/* TEXT CONTENT */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-between text-white">
-        <div>
-          <h3 className="text-2xl font-bold mb-2">{title}</h3>
-          <p className="text-sm opacity-80">{description}</p>
+      {/* OVERLAY */}
+      <div className="absolute inset-0 bg-black/70" />
+
+      {/* CONTENT */}
+      <div className="absolute inset-0 p-5 flex flex-col justify-between text-white">
+        {/* TOP TEXT */}
+        <div className="space-y-2">
+          <h3 className="text-lg font-semibold leading-tight">{title}</h3>
+
+          <p className="text-xs leading-relaxed opacity-90">{description}</p>
         </div>
 
-        {/* TECH LIST */}
-        <div className="flex gap-2 flex-wrap mt-3">
+        {/* TECH */}
+        <div className="flex flex-wrap gap-2 mt-3">
           {tech.map((item, index) => (
             <span
               key={index}
               className="
-                text-xs px-2 py-1 rounded bg-white/20
+                text-[10px]
+                px-2 py-1
+                rounded-full
+                bg-white/20
                 backdrop-blur-sm
               "
             >
@@ -51,21 +58,28 @@ export const ProjectCard = ({
         </div>
 
         {/* LINKS */}
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-6 mt-4">
           {githubLink && (
-            <a href={githubLink} target="_blank" rel="noopener noreferrer">
-              <FiGithub
-                size={22}
-                className="hover:text-violet-700 dark:hover:text-yellow-300 transition"
-              />
+            <a
+              href={githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub repository"
+            >
+              <FiGithub size={20} className="active:scale-90 transition" />
             </a>
           )}
 
           {liveLink && (
-            <a href={liveLink} target="_blank" rel="noopener noreferrer">
+            <a
+              href={liveLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Live project"
+            >
               <FiExternalLink
-                size={22}
-                className="hover:text-violet-700 dark:hover:text-yellow-300 transition"
+                size={20}
+                className="active:scale-90 transition"
               />
             </a>
           )}

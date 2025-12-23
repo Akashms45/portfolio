@@ -14,101 +14,86 @@ export const Contact = () => {
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_bc5hicp",
+        "template_9t3ozjc",
         e.target,
-        "YOUR_PUBLIC_KEY"
+        "CXj81xby3Etx-Zu4V"
       )
-      .then(() => setStatus("Message Sent ✔"))
+      .then(() => {
+        setStatus("Message Sent ✔");
+        e.target.reset();
+      })
       .catch(() => setStatus("Failed ❌"));
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-14 space-y-12">
-      <h2 className="text-4xl font-bold text-center text-primary dark:text-primaryDark">
+    <section className="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-14 space-y-10 overflow-x-hidden">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-primary dark:text-primaryDark">
         Contact Me
       </h2>
-      <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-14">
-        {/* LEFT SIDE */}
 
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 max-w-full">
+        {/* LEFT SIDE */}
         <div className="space-y-8 text-gray-800 dark:text-gray-200">
-          <div className="space-y-6 pt-6 mt-24 ml-16 font-bold ">
+          <div className="space-y-6 pt-6 mt-0 md:mt-16 lg:mt-24 ml-0 md:ml-10 lg:ml-16 font-bold max-w-full">
+            {/* PHONE */}
             <a
               href={`tel:${phone}`}
-              className="flex p-1 text-lg items-center gap-3 hover:text-primary  transition"
+              className="flex items-center gap-3 text-sm sm:text-base md:text-lg hover:text-primary transition max-w-full"
             >
               <FiPhone
-                size={22}
-                className="text-primary dark:text-primaryDark"
-              />{" "}
-              {phone}
+                size={20}
+                className="text-primary dark:text-primaryDark flex-shrink-0"
+              />
+              <span className="break-all max-w-full">{phone}</span>
             </a>
 
+            {/* EMAIL */}
             <a
               href={`mailto:${email}`}
-              className="flex p-1 text-lg items-center gap-3 hover:text-primary transition"
+              className="flex items-start gap-3 text-sm sm:text-base md:text-lg hover:text-primary transition max-w-full"
             >
               <FiMail
-                size={22}
-                className="text-primary dark:text-primaryDark"
-              />{" "}
-              {email}
+                size={20}
+                className="text-primary dark:text-primaryDark flex-shrink-0 mt-1"
+              />
+              <span className="break-all max-w-full">{email}</span>
             </a>
 
-            {/* <a
-              href={info.linkedin}
-              target="_blank"
-              className="flex p-1 text-lg items-center gap-3 hover:text-primary transition"
-              rel="noopener noreferrer"
-            >
-              <FiLinkedin
-                size={22}
-                className="text-primary dark:text-primaryDark"
-              />{" "}
-              {info.linkedin}
-            </a> */}
-
-            <p className="flex p-1 text-lg items-center gap-3 opacity-80">
+            {/* ADDRESS */}
+            <p className="flex items-start gap-3 text-sm sm:text-base md:text-lg opacity-80 max-w-full">
               <FiMapPin
-                size={22}
-                className="text-primary dark:text-primaryDark"
-              />{" "}
-              {address}
+                size={20}
+                className="text-primary dark:text-primaryDark flex-shrink-0 mt-1"
+              />
+              <span className="break-words max-w-full">{address}</span>
             </p>
           </div>
         </div>
 
         {/* RIGHT SIDE FORM */}
-        <form
-          onSubmit={sendEmail}
-          className="
-             p-8
-            space-y-6
-          "
-        >
+        <form onSubmit={sendEmail} className="p-6 sm:p-8 space-y-6 max-w-full">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <input
-              type="text"
               name="name"
               placeholder="Name"
               required
-              className="p-3 font-bold bg-violet-200 dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark outline-none"
+              className="p-3 text-sm sm:text-base font-bold bg-violet-200 dark:bg-gray-700 rounded-lg outline-none"
             />
 
             <input
-              type="email"
               name="email"
+              type="email"
               placeholder="Email"
               required
-              className="p-3 font-bold bg-violet-200 dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark  outline-none"
+              className="p-3 text-sm sm:text-base font-bold bg-violet-200 dark:bg-gray-700 rounded-lg outline-none"
             />
           </div>
 
           <input
-            type="text"
             name="phone"
             placeholder="Phone"
-            className="w-full font-bold p-3 bg-violet-200 dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark outline-none"
+            className="w-full p-3 text-sm sm:text-base font-bold bg-violet-200 dark:bg-gray-700 rounded-lg outline-none"
           />
 
           <textarea
@@ -116,21 +101,19 @@ export const Contact = () => {
             placeholder="Message"
             required
             rows="4"
-            className="w-full font-bold p-3 bg-violet-200 dark:bg-gray-700 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-primaryDark outline-none"
+            className="w-full p-3 text-sm sm:text-base font-bold bg-violet-200 dark:bg-gray-700 rounded-lg outline-none"
           />
 
           <button
             type="submit"
-            className="
-              w-full py-3
-              bg-primary dark:bg-primaryDark text-white rounded-lg
-              hover:bg-primary/90 transition font-medium flex justify-center items-center gap-2
-            "
+            className="w-full py-3 text-sm sm:text-base bg-primary dark:bg-primaryDark text-white rounded-lg"
           >
             Send Message
           </button>
 
-          {status && <p className="text-center text-sm pt-2">{status}</p>}
+          {status && (
+            <p className="text-center text-xs sm:text-sm pt-2">{status}</p>
+          )}
         </form>
       </div>
     </section>

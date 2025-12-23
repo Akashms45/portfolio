@@ -12,7 +12,7 @@ export const projects = [
     tech: ["React", "Tailwind"],
     image: Portfolio,
     githubLink: "https://github.com/Akashms45/portfolio",
-    liveLink: "https://akashms.netlify.app/",
+    liveLink: "https://akashms45.github.io/portfolio",
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ export const projects = [
     tech: ["React", "LocalStorage"],
     image: NoteApp,
     githubLink: "https://github.com/Akashms45/note_app",
-    liveLink: "https://note-ifstdproject.netlify.app/",
+    liveLink: "https://akashms45.github.io/note_app",
   },
   {
     id: 3,
@@ -31,7 +31,7 @@ export const projects = [
     tech: ["React", "Context", "Tailwind"],
     image: Ecommerce,
     githubLink: "https://github.com/Akashms45/e-com_websit",
-    liveLink: "https://e-comshoping.netlify.app/",
+    liveLink: "https://akashms45.github.io/e-com_websit",
   },
   {
     id: 4,
@@ -40,7 +40,7 @@ export const projects = [
     tech: ["React", "TMDB API", "Tailwind"],
     image: MovieExplorer,
     githubLink: "https://github.com/Akashms45/movie-app",
-    liveLink: "",
+    liveLink: "https://akashms45.github.io/movie-app",
   },
   {
     id: 5,
@@ -50,6 +50,6 @@ export const projects = [
     tech: ["React", "Tailwind", "Charts.js"],
     image: Dashboard,
     githubLink: "https://github.com/Akashms45/dashboard",
-    liveLink: "https://respdashboard.netlify.app/",
+    liveLink: "https://akashms45.github.io/dashboard",
   },
 ];

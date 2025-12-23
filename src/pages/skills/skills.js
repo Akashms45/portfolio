@@ -47,30 +47,31 @@ export const Skills = () => {
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16 space-y-12">
-      <h2 className="text-4xl font-bold text-center text-primary dark:text-primaryDark">
+    <section className="max-w-5xl mx-auto px-4 sm:px-6 py-10 md:py-16 space-y-10 md:space-y-12 overflow-x-hidden">
+      {/* HEADING */}
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-primary dark:text-primaryDark">
         Skills
       </h2>
 
       {/* FRONTEND + BACKEND */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
         {/* FRONTEND */}
-        <div className="pb-6">
+        <div className="pb-6 max-w-full">
           <button
             onClick={() => setOpenFrontend(!openFrontend)}
-            className="flex justify-between items-center w-full text-xl font-semibold tracking-wide py-2 hover:text-primary dark:hover:text-primaryDark transition"
+            className="flex justify-between items-center w-full text-base sm:text-lg md:text-xl font-semibold py-2 hover:text-primary dark:hover:text-primaryDark transition"
           >
-            <span className="flex items-center gap-3">
-              <span className="text-2xl font-bold text-primary dark:text-primaryDark">
+            <span className="flex items-center gap-3 max-w-full">
+              <span className="text-xl md:text-2xl text-primary dark:text-primaryDark">
                 <LuBraces />
               </span>
-              Frontend Development
+              <span className="truncate">Frontend Development</span>
             </span>
 
             <FiChevronDown
               className={`transition-transform duration-200 ${
                 openFrontend ? "rotate-180" : ""
-              } hover:scale-110`}
+              }`}
             />
           </button>
 
@@ -81,11 +82,11 @@ export const Skills = () => {
                 : "max-h-0 opacity-50"
             }`}
           >
-            <div className="space-y-6">
+            <div className="space-y-5">
               {frontend.map((skill, i) => (
                 <div key={i}>
-                  <div className="flex justify-between text-sm font-medium mb-1">
-                    <span className="flex items-center gap-2">
+                  <div className="flex justify-between items-center text-xs sm:text-sm font-medium mb-1">
+                    <span className="flex items-center gap-2 break-words">
                       {iconMap[skill.icon]} {skill.name}
                     </span>
                     <span>{skill.level}%</span>
@@ -103,22 +104,22 @@ export const Skills = () => {
         </div>
 
         {/* BACKEND */}
-        <div className="pb-6">
+        <div className="pb-6 max-w-full">
           <button
             onClick={() => setOpenBackend(!openBackend)}
-            className="flex justify-between items-center w-full text-xl font-semibold tracking-wide py-2 hover:text-primary dark:hover:text-primaryDark transition"
+            className="flex justify-between items-center w-full text-base sm:text-lg md:text-xl font-semibold py-2 hover:text-primary dark:hover:text-primaryDark transition"
           >
-            <span className="flex items-center gap-3">
-              <span className="text-2xl font-bold text-primary dark:text-primaryDark">
+            <span className="flex items-center gap-3 max-w-full">
+              <span className="text-xl md:text-2xl text-primary dark:text-primaryDark">
                 <GiServerRack />
               </span>
-              Backend & APIs
+              <span className="truncate">Backend & APIs</span>
             </span>
 
             <FiChevronDown
               className={`transition-transform duration-200 ${
                 openBackend ? "rotate-180" : ""
-              } hover:scale-110`}
+              }`}
             />
           </button>
 
@@ -133,18 +134,18 @@ export const Skills = () => {
               {backendLearning.map((item, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-3 text-gray-800 dark:text-gray-300"
+                  className="flex items-center gap-3 text-sm sm:text-base text-gray-800 dark:text-gray-300 max-w-full"
                 >
-                  <span>{iconMap[item.icon]}</span>
-                  <span>{item.name}</span>
+                  {iconMap[item.icon]}
+                  <span className="truncate">{item.name}</span>
 
                   <span className="flex gap-1 text-primary dark:text-primaryDark ml-2">
-                    <span className="animate-bounce delay-75">•</span>
+                    <span className="animate-bounce">•</span>
                     <span className="animate-bounce delay-150">•</span>
                     <span className="animate-bounce delay-300">•</span>
                   </span>
 
-                  <span className="text-sm opacity-60 ml-1">learning...</span>
+                  <span className="text-xs opacity-60 ml-1">learning...</span>
                 </div>
               ))}
             </div>
@@ -153,20 +154,20 @@ export const Skills = () => {
       </div>
 
       {/* PROGRAMMING */}
-      <div className="pb-6">
+      <div className="pb-6 max-w-full">
         <button
           onClick={() => setOpenProgramming(!openProgramming)}
-          className="flex justify-between items-center w-full text-xl font-semibold tracking-wide py-2 hover:text-primary dark:hover:text-primaryDark transition"
+          className="flex justify-between items-center w-full text-base sm:text-lg md:text-xl font-semibold py-2 hover:text-primary dark:hover:text-primaryDark transition"
         >
-          <span className="flex items-center gap-3">
+          <span className="flex items-center gap-3 max-w-full">
             <FaCode className="text-primary dark:text-primaryDark" />
-            Programming Languages
+            <span className="truncate">Programming Languages</span>
           </span>
 
           <FiChevronDown
             className={`transition-transform duration-200 ${
               openProgramming ? "rotate-180" : ""
-            } hover:scale-110`}
+            }`}
           />
         </button>
 
@@ -177,11 +178,11 @@ export const Skills = () => {
               : "max-h-0 opacity-50"
           }`}
         >
-          <div className="space-y-6">
+          <div className="space-y-5">
             {programming.map((skill, i) => (
               <div key={i}>
-                <div className="flex justify-between text-sm font-medium mb-1">
-                  <span className="flex items-center gap-2">
+                <div className="flex justify-between items-center text-xs sm:text-sm font-medium mb-1">
+                  <span className="flex items-center gap-2 break-words">
                     {iconMap[skill.icon]} {skill.name}
                   </span>
                   <span>{skill.level}%</span>
@@ -201,16 +202,22 @@ export const Skills = () => {
 
       {/* OTHER SKILLS */}
       <div>
-        <h3 className="text-xl font-semibold mb-4">Other Skills</h3>
+        <h3 className="text-lg sm:text-xl font-semibold mb-4">Other Skills</h3>
 
-        <ul className="flex flex-wrap gap-6 text-xl">
+        <ul className="flex flex-wrap gap-4 sm:gap-6">
           {otherSkills.map((skill, i) => (
             <li
               key={i}
-              className="flex items-center gap-2 cursor-pointer bg-gray-100 dark:bg-gray-700 px-3 py-1 rounded-xl shadow hover:shadow-md transition"
+              className="
+                flex items-center gap-2
+                text-sm sm:text-base
+                bg-gray-100 dark:bg-gray-700
+                px-3 py-1 rounded-xl shadow
+                hover:shadow-md transition
+              "
             >
               {iconMap[skill.icon]}
-              <span className="text-base font-medium">{skill.name}</span>
+              <span className="font-medium">{skill.name}</span>
             </li>
           ))}
         </ul>
