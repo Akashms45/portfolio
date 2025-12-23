@@ -24,7 +24,7 @@ export const Contact = () => {
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-6 py-16 space-y-12">
+    <section className="max-w-5xl mx-auto px-6 py-14 space-y-12">
       <h2 className="text-4xl font-bold text-center text-primary dark:text-primaryDark">
         Contact Me
       </h2>

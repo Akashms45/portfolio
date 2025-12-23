@@ -5,8 +5,7 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 import { useMobile } from "../../hooks/useMobile";
 
 export const Home = () => {
-  const isMobile = useMobile(); // detect small screens
-
+  const isMobile = useMobile();
   const navigate = useNavigate();
 
   return (
@@ -19,7 +18,7 @@ export const Home = () => {
           items-center
           justify-center
           max-w-6xl mx-auto          
-          min-h-[calc(100vh-230px)]           
+          min-h-[calc(100svh-230px)]           
           px-4
         "
       >
@@ -29,26 +28,33 @@ export const Home = () => {
             <img
               src={info.image}
               alt="profile"
+              width="420"
+              height="420"
               className="
-              block dark:hidden object-cover 
-              w-64 h-64 mx-auto md:w-full md:h-full
-              rounded-2xl transition-opacity duration-500
-            "
+                block dark:hidden object-cover
+                w-80 h-80 mx-auto
+                md:max-w-[420px] md:h-auto
+                rounded-2xl transition-opacity duration-500
+              "
             />
+
             {/* DARK IMG */}
             <img
               src={info.darkimage}
               alt="profile dark"
+              width="420"
+              height="420"
               className="
-              hidden dark:block object-cover 
-              w-64 h-64 mx-auto md:w-full md:h-full
-              rounded-2xl transition-opacity duration-500
-            "
+                hidden dark:block object-cover
+                w-80 h-80 mx-auto
+                md:max-w-[420px] md:h-auto
+                rounded-2xl transition-opacity duration-500
+              "
             />
           </div>
         )}
 
-        {/* TEXT SECOND ON MOBILE */}
+        {/* TEXT */}
         <div className="space-y-4 text-center md:text-left order-2 md:order-1">
           <h1 className="text-4xl font-bold">Hi, I'm {info.name} 👋</h1>
 
