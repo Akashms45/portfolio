@@ -22,7 +22,7 @@ export const ProjectSlider = () => {
         {/* LEFT ARROW */}
         <button
           onClick={prev}
-          className="absolute -left-72 dark:-left-16 text-7xl text-primary dark:text-primaryDark transition"
+          className="absolute -left-16 dark:-left-16 text-7xl text-primary dark:text-primaryDark transition"
         >
           <FiChevronLeft />
         </button>
@@ -94,7 +94,7 @@ export const ProjectSlider = () => {
         {/* RIGHT ARROW */}
         <button
           onClick={next}
-          className="absolute -right-72 md:-right-16 text-7xl text-primary dark:text-primaryDark transition"
+          className="absolute -right-16 md:-right-16 text-7xl text-primary dark:text-primaryDark transition"
         >
           <FiChevronRight />
         </button>
