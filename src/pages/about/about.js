@@ -110,7 +110,11 @@ export const About = () => {
         </div>
 
         {/* CV DOWNLOAD */}
-        <a href="/AkashCV.pdf" download className="btn-primary">
+        <a
+          href={`${process.env.PUBLIC_URL}/AkashCV.pdf`}
+          download
+          className="btn-primary"
+        >
           Download CV <FiDownload size={20} />
         </a>
       </div>
