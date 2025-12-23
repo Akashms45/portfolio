@@ -31,7 +31,7 @@ export const Home = () => {
               alt="profile"
               className="
               block dark:hidden object-cover 
-              w-72 h-72 md:w-full md:h-full
+              w-64 h-64 mx-auto md:w-full md:h-full
               rounded-2xl transition-opacity duration-500
             "
             />
@@ -41,7 +41,7 @@ export const Home = () => {
               alt="profile dark"
               className="
               hidden dark:block object-cover 
-              w-72 h-72 md:w-full md:h-full
+              w-64 h-64 mx-auto md:w-full md:h-full
               rounded-2xl transition-opacity duration-500
             "
             />
