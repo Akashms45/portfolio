@@ -6,12 +6,26 @@ import { Skills } from "../../pages/skills/skills";
 
 export const ScrollLayout = () => {
   return (
-    <div className="overflow-y-auto">
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
+    <div className="overflow-y-auto scroll-smooth">
+      <section id="home">
+        <Home />
+      </section>
+
+      <section id="about">
+        <About />
+      </section>
+
+      <section id="skills">
+        <Skills />
+      </section>
+
+      <section id="projects">
+        <Projects />
+      </section>
+
+      <section id="contact">
+        <Contact />
+      </section>
     </div>
   );
 };

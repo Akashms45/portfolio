@@ -6,37 +6,29 @@ import { info } from "../../data/info";
 
 export const Navbar = () => {
   const isMobile = useMobile();
-  const [dark, setDark] = React.useState(false);
+  const [dark, setDark] = React.useState(
+    document.documentElement.classList.contains("dark")
+  );
 
   const toggleTheme = () => {
-    setDark(!dark);
     document.documentElement.classList.toggle("dark");
+    setDark(document.documentElement.classList.contains("dark"));
   };
 
   return (
     <nav className="px-4 md:px-12 py-4">
       <div className="flex items-center justify-between w-full">
-        {/* LEFT: logo + name */}
+        {/* LEFT */}
         <div className="flex items-center gap-2 min-w-0">
           {isMobile && (
             <img
               src={info.image}
               alt="logo"
-              className="
-                w-10 h-10
-                rounded-full object-cover
-                flex-shrink-0
-              "
+              className="w-10 h-10 rounded-full object-cover flex-shrink-0"
             />
           )}
 
-          <h1
-            className="
-              text-2xl md:text-4xl
-              font-bold tracking-wide lobster
-              truncate
-            "
-          >
+          <h1 className="text-2xl md:text-4xl font-bold tracking-wide lobster truncate">
             Akash
           </h1>
         </div>

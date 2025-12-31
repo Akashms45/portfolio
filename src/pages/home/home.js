@@ -8,6 +8,16 @@ export const Home = () => {
   const isMobile = useMobile();
   const navigate = useNavigate();
 
+  const goToContact = () => {
+    if (isMobile) {
+      document.getElementById("contact")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/contact");
+    }
+  };
+
   return (
     <>
       <div
@@ -24,7 +34,6 @@ export const Home = () => {
       >
         {!isMobile && (
           <div className="relative order-1 md:order-2 flex justify-center">
-            {/* LIGHT IMG */}
             <img
               src={info.image}
               alt="profile"
@@ -38,7 +47,6 @@ export const Home = () => {
               "
             />
 
-            {/* DARK IMG */}
             <img
               src={info.darkimage}
               alt="profile dark"
@@ -66,8 +74,9 @@ export const Home = () => {
             {info.description}
           </p>
 
+          {/* ONLY ONE BUTTON */}
           <button
-            onClick={() => navigate("/contact")}
+            onClick={goToContact}
             className="
               mt-4 flex items-center gap-2 mx-auto md:mx-0
               px-5 py-2 
@@ -82,6 +91,7 @@ export const Home = () => {
         </div>
       </div>
 
+      {/* SOCIAL ICONS stay as-is */}
       <div className="flex gap-5 text-3xl items-center justify-center mt-4">
         <a
           href={info.github}

@@ -1,9 +1,12 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
+import { useMobile } from "../../hooks/useMobile";
 
 export const Sections = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const isMobile = useMobile();
   const [dark, setDark] = useState(false);
 
   const menuRoute = [
@@ -11,7 +14,7 @@ export const Sections = () => {
     { id: 2, title: "About", path: "/about" },
     { id: 3, title: "Skills", path: "/skills" },
     { id: 4, title: "Projects", path: "/projects" },
-    { id: 6, title: "Contact Me", path: "/contact" },
+    { id: 5, title: "Contact Me", path: "/contact" },
   ];
 
   const toggleTheme = () => {
@@ -19,12 +22,23 @@ export const Sections = () => {
     setDark(!dark);
   };
 
+  const handleNav = (path) => {
+    if (isMobile) {
+      const id = path === "/" ? "home" : path.replace("/", "");
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    } else {
+      navigate(path);
+    }
+  };
+
   return (
     <div className="flex gap-6 items-center">
       {menuRoute.map((menu) => (
-        <Link
+        <button
           key={menu.id}
-          to={menu.path}
+          onClick={() => handleNav(menu.path)}
           className={`transition font-bold text-lg hover:text-violet-900 dark:hover:text-yellow-400  
             ${
               location.pathname === menu.path
@@ -33,10 +47,10 @@ export const Sections = () => {
             }`}
         >
           {menu.title}
-        </Link>
+        </button>
       ))}
 
-      {/* toggle button */}
+      {/* Theme toggle */}
       <button
         className="p-2 text-lg rounded-md font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition"
         onClick={toggleTheme}
